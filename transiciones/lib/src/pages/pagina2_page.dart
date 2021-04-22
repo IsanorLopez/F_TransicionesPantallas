@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class Pagina1Page extends StatelessWidget {
+class Pagina2Page extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
