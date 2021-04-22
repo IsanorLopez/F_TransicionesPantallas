@@ -29,7 +29,7 @@ class Pagina1Page extends StatelessWidget {
       transitionDuration: Duration(seconds: 1),
       transitionsBuilder: ( context, animation, secondaryAnimation, child ) {
       
-        final curvedAnimation = CurvedAnimation(parent: animation, curve: Curves.easeInCubic);
+        final curvedAnimation = CurvedAnimation(parent: animation, curve: Curves.easeInOut);
 
         //return SlideTransition(
         //  position: Tween<Offset>( begin: Offset(0.5, 1.0), end: Offset.zero ).animate(curvedAnimation),
@@ -42,9 +42,22 @@ class Pagina1Page extends StatelessWidget {
         //);
         
 
+        //return RotationTransition(
+        //  child: child,
+        //  turns: Tween<double>(begin: 0.0, end: 1.0).animate(curvedAnimation)
+        //);
+
+        //return FadeTransition(
+        //  child: child,
+        //  opacity: Tween<double>(begin: 0.0, end: 1.0).animate(curvedAnimation)
+        //);
+
         return RotationTransition(
-          child: child,
-          turns: Tween<double>(begin: 0.0, end: 1.0).animate(curvedAnimation)
+          child: FadeTransition(
+            child: child,
+            opacity: Tween<double>(begin: 0.0, end: 1.0).animate(curvedAnimation)
+          ),
+          turns: Tween<double>(begin: 0.9, end: 1.0).animate(curvedAnimation)
         );
 
       }
